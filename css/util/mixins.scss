@@ -1,0 +1,9 @@
+$ow-skew: -0.25rad;
+$ow-unskew: 0.25rad;
+
+@mixin ow-box {
+  transform: skew($ow-skew);
+  > * {
+    transform: skew($ow-unskew);
+  }
+}

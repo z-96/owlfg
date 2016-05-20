@@ -1,0 +1,30 @@
+@mixin ow-font {
+  font-family: 'BigNoodle', 'Arial Black', sans-serif;
+  font-style: oblique;
+}
+
+@mixin ow-font-large {
+  font-size: 36px;
+  letter-spacing: 0.8px;
+  @include ow-font;
+}
+
+@mixin ow-font-medium {
+  font-size: 22px;
+  letter-spacing: 0.8px;
+  @include ow-font;
+}
+
+@mixin ow-font-small {
+  font-size: 16px;
+  @include ow-font;
+}
+
+@mixin copy-font {
+  font-family: 'Futura', 'century gothic', 'arial', sans-serif;
+}
+
+@mixin copy-font-caps {
+  text-transform: uppercase;
+  @include copy-font;
+}

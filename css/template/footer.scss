@@ -1,0 +1,19 @@
+@import "config/colors";
+@import "config/type";
+
+.owlfg-footer {
+  text-align: center;
+
+  &-link {
+    display: inline-block;
+    margin: 0 20px;
+    color: $color-white;
+    opacity: 0.6;
+    transition: opacity 75ms ease;
+    @include ow-font-medium;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

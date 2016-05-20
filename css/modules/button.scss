@@ -1,0 +1,43 @@
+@import "config/colors";
+@import "config/type";
+
+.owbtn {
+  min-width: 200px;
+  border: none;
+  padding: 14px 16px;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Helvetica Neueu", sans-serif;
+  cursor: pointer;
+  outline: none;
+
+  &, &--default {
+    background-color: $color-light;
+
+    &, a {
+      color: $color-dark;
+    }
+  }
+
+  &--primary {
+    background-color: $color-blue;
+    &, a {
+      color: $color-white;
+    }
+  }
+
+  &--link {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+    background: none;
+
+    &, a {
+      color: $color-white;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "config/colors";
+@import "config/type";
+
+.owlfg-header {
+  &-title {
+    &, a {
+      color: $color-white;
+    }
+    @include ow-font-large;
+  }
+}

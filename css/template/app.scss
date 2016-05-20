@@ -1,0 +1,11 @@
+@import "config/template";
+
+.owlfg {
+  max-width: $template-max-width + $template-padding;
+  padding: 0 $template-padding;
+  margin: $template-margin-top auto $template-margin-bottom;
+
+  &-content {
+    min-height: 500px;
+  }
+}

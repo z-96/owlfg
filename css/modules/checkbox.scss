@@ -1,0 +1,45 @@
+@import "config/forms";
+@import "config/type";
+@import "util/mixins";
+
+.owcheckbox {
+  // Just to bring it inline with other elements.
+  margin-top: $owform-label-height;
+
+  &-label {
+    line-height: $owform-el-height;
+    vertical-align: top;
+  }
+
+  &-checkbox {
+    position: absolute;
+    opacity: 0.00001;
+  }
+
+  &-box {
+    display: inline-block;
+    vertical-align: top;
+    width: $owform-el-height;
+    height: $owform-el-height;
+    margin-right: 8px;
+    background-color: $owform-el-bg;
+    box-shadow: 0 0 0 2px $owform-el-border inset;
+    border-radius: $owform-el-radius;
+    text-align: center;
+    @include ow-box;
+
+    &:hover {
+      box-shadow: 0 0 0 2px lighten($owform-el-border, 10%) inset;
+    }
+
+    &-check {
+      display: none;
+      line-height: $owform-el-height;
+      color: $owform-el-active;
+
+      &.isChecked {
+        display: block;
+      }
+    }
+  }
+}

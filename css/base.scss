@@ -1,0 +1,17 @@
+// This file loads universal styles first.
+@import "config/colors";
+
+@import "util/normalize";
+@import "util/box-sizing";
+@import "util/fonts";
+@import "util/forms";
+
+a {
+  text-decoration: none;
+}
+
+body {
+  color: $color-white;
+  background-image: url("/dist/img/template/bg-dark.jpg");
+  background-size: cover;
+}

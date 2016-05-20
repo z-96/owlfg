@@ -1,0 +1,10 @@
+.profile-form {
+  text-align: center;
+  padding-bottom: 80px;
+
+  .owform {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
