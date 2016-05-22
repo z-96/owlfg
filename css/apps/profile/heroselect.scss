@@ -27,10 +27,6 @@
     cursor: pointer;
     @include ow-box;
 
-    > .inner {
-      overflow: hidden;
-    }
-
     &-portrait {
       position: absolute;
       top: 0;

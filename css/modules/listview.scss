@@ -1,0 +1,24 @@
+@import "util/mixins";
+
+$sidebar-width: 300px;
+.listview {
+  @include clearfix;
+
+  &-title {
+    clear: both;
+  }
+
+  &-list,
+  &-sidebar {
+    float: left;
+  }
+
+  &-list {
+    width: calc(100% - #{$sidebar-width});
+    padding-right: 40px;
+  }
+
+  &-sidebar {
+    width: $sidebar-width;
+  }
+}

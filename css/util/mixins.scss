@@ -1,3 +1,11 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 $ow-skew: -0.25rad;
 $ow-unskew: 0.25rad;
 

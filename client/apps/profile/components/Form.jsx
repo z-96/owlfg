@@ -5,14 +5,9 @@ import Checkbox from "modules/Checkbox";
 import Select from "modules/Select";
 import Input from "modules/Input";
 import HeroSelect from "./HeroSelect";
-import {
-  ROLES,
-  ROLE_ORDER,
-} from "shared/heroes";
-import {
-  REGIONS,
-  REGION_ORDER,
-} from "shared/regions";
+import { TYPES, TYPE_ORDER } from "shared/profile";
+import { ROLES, ROLE_ORDER } from "shared/heroes";
+import { REGIONS, REGION_ORDER } from "shared/regions";
 
 import "css/apps/profile/form";
 
@@ -65,65 +60,58 @@ const Form = React.createClass({
     });
   },
 
+  _optionify(lookup, order) {
+    return order.map((key) => {
+      return {
+        name: lookup[key].name,
+        value: key,
+      };
+    });
+  },
+
   render() {
     const { state, props } = this;
     const { user, submit } = props;
 
-    const typeOptions = [{
-      name: "Competitive",
-      value: "competitive",
-    }, {
-      name: "Casual",
-      value: "casual",
-    }];
-
-    const roleOptions = ROLE_ORDER.map((role) => {
-      return {
-        name: ROLES[role].name,
-        value: role,
-      };
-    });
+    const typeOptions = this._optionify(TYPES, TYPE_ORDER);
+    const regionOptions = this._optionify(REGIONS, REGION_ORDER);
+    const roleOptions = this._optionify(ROLES, ROLE_ORDER);
     roleOptions.unshift({
       name: "No preference",
       value: null,
     });
 
-    const regionOptions = REGION_ORDER.map((region) => {
-      return {
-        name: REGIONS[region].name,
-        value: region,
-      };
-    });
-
     return (
       <form className="profile-form" action="/profile" onSubmit={this._submit}>
-        <Select
-          name="type"
-          label="Player type"
-          options={typeOptions}
-          value={state.type}
-          onChange={this._onChange}
-        />
-        <Select
-          name="role"
-          label="Preferred role"
-          options={roleOptions}
-          value={state.role}
-          onChange={this._onChange}
-        />
-        <Select
-          name="region"
-          label="Region"
-          options={regionOptions}
-          value={state.region}
-          onChange={this._onChange}
-        />
-        <Checkbox
-          name="microphone"
-          label="Microphone"
-          checked={state.microphone}
-          onChange={this._onChange}
-        />
+        <div>
+          <Select
+            name="type"
+            label="Player type"
+            options={typeOptions}
+            value={state.type}
+            onChange={this._onChange}
+          />
+          <Select
+            name="role"
+            label="Preferred role"
+            options={roleOptions}
+            value={state.role}
+            onChange={this._onChange}
+          />
+          <Select
+            name="region"
+            label="Region"
+            options={regionOptions}
+            value={state.region}
+            onChange={this._onChange}
+          />
+          <Checkbox
+            name="microphone"
+            label="Microphone"
+            checked={state.microphone}
+            onChange={this._onChange}
+          />
+        </div>
 
         <HeroSelect
           heroes={state.heroes}
