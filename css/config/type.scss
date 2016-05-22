@@ -23,8 +23,3 @@
 @mixin copy-font {
   font-family: 'Futura', 'century gothic', 'arial', sans-serif;
 }
-
-@mixin copy-font-caps {
-  text-transform: uppercase;
-  @include copy-font;
-}
