@@ -9,9 +9,10 @@
   display: inline-block;
   vertical-align: top;
   text-align: left;
+  cursor: pointer;
 
   &-label {
-    color: $color-white;
+    color: $color-owform-label;
     @include ow-font-medium;
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import PureRenderMixin from "react-addons-pure-render-mixin";
 
 import Button from "modules/Button";
 import Checkbox from "modules/Checkbox";
@@ -16,6 +17,8 @@ const Form = React.createClass({
     user: React.PropTypes.object,
     submit: React.PropTypes.func,
   },
+
+  mixins: [PureRenderMixin],
 
   getInitialState() {
     const { user } = this.props;

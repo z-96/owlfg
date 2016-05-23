@@ -3,27 +3,33 @@
 
 .owbtn {
   min-width: 200px;
+  height: 46px;
+  line-height: 46px;
   border: none;
-  padding: 14px 16px;
+  padding: 0 16px;
   border-radius: 4px;
   font-size: 18px;
-  line-height: 18px;
   font-family: "Helvetica Neueu", sans-serif;
   cursor: pointer;
   outline: none;
 
   &, &--default {
-    background-color: $color-light;
-
+    background-color: $color-button-default;
+    &:hover {
+      background-color: lighten($color-button-default, 5%);
+    }
     &, a {
-      color: $color-dark;
+      color: $color-button-default-text;
     }
   }
 
   &--primary {
-    background-color: $color-blue;
+    background-color: $color-button-primary;
+    &:hover {
+      background-color: saturate(lighten($color-button-primary, 5%), 10%);
+    }
     &, a {
-      color: $color-white;
+      color: $color-button-primary-text;
     }
   }
 
@@ -36,8 +42,11 @@
     box-shadow: none;
     background: none;
 
+    &:hover {
+      background: none;
+    }
     &, a {
-      color: $color-white;
+      color: $color-button-link-text;
     }
   }
 }

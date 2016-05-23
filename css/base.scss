@@ -11,8 +11,9 @@ a {
 }
 
 body {
-  color: $color-white;
-  background-image: url("/dist/img/template/bg-dark.jpg");
+  color: $color-base-text;
+  background-color: $color-base-bg;
+  background-image: url("/dist/img/template/bg-light.jpg");
   background-size: cover;
   @include copy-font;
 }

@@ -1,5 +1,6 @@
 @import "config/forms";
 @import "config/type";
+@import "config/colors";
 @import "util/mixins";
 
 .owcheckbox {
@@ -24,20 +25,26 @@
     width: $owform-el-height;
     height: $owform-el-height;
     margin-right: 8px;
-    background-color: $owform-el-bg;
-    box-shadow: 0 0 0 2px $owform-el-border inset;
+    background-color: $color-owform-bg;
+    box-shadow: 0 0 0 2px $color-owform-border inset;
     border-radius: $owform-el-radius;
     text-align: center;
     @include ow-box;
 
-    &:hover {
-      box-shadow: 0 0 0 2px lighten($owform-el-border, 10%) inset;
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 2px $color-owform-hover inset;
+    }
+
+    &.isChecked {
+      background-color: $color-owform-active;
+      box-shadow: 0 0 0 2px $color-owform-active inset;
     }
 
     &-check {
       display: none;
       line-height: $owform-el-height;
-      color: $owform-el-active;
+      color: $color-owform-bg;
 
       &.isChecked {
         display: block;

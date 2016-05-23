@@ -1,9 +1,12 @@
 import React from "react";
+import PureRenderMixin from "react-addons-pure-render-mixin";
 
 const Intro = React.createClass({
   propTypes: {
     user: React.PropTypes.object,
   },
+
+  mixins: [PureRenderMixin],
 
   render() {
     const { user } = this.props;

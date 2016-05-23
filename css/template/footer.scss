@@ -7,13 +7,12 @@
   &-link {
     display: inline-block;
     margin: 0 20px;
-    color: $color-white;
-    opacity: 0.6;
+    color: $color-footer-link;
     transition: opacity 75ms ease;
     @include ow-font-medium;
 
     &:hover {
-      opacity: 1;
+      text-decoration: underline;
     }
   }
 }

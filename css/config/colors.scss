@@ -1,9 +1,45 @@
+// List of possible colors
 $color-white: #FFF;
 $color-light: #CCD0D9;
-$color-dark: #060606;
+$color-dark: #405275;
+$color-charcoal: #060606;
 $color-brown: #2F2526;
 $color-beige: #584F4A;
 $color-orange: #FAA02E;
 $color-yellow: #FCBD49;
 $color-blue: #017EFE;
 $color-teal: #01E7FE;
+
+// Base styles
+$color-base-bg: $color-light;
+$color-base-text: $color-dark;
+
+// Template
+$color-footer-link: $color-dark;
+$color-header-link: $color-dark;
+
+// Forms
+$color-owform-bg: $color-white;
+$color-owform-border: $color-light;
+$color-owform-hover: darken($color-light, 15%);
+$color-owform-active: $color-orange;
+$color-owform-label: $color-dark;
+
+// Buttons
+$color-button-default: $color-dark;
+$color-button-default-text: $color-white;
+$color-button-primary: $color-orange;
+$color-button-primary-text: $color-white;
+$color-button-link-text: $color-dark;
+
+// Hero selct
+$color-heroselect-hero-bg: $color-light;
+$color-heroselect-hero-border: $color-white;
+$color-heroselect-hero-bg-hover: darken($color-light, 15%);
+$color-heroselect-hero-bg-active: $color-orange;
+$color-heroselect-hero-bg-active-hover: darken($color-orange, 15%);
+$color-heroselect-hero-border-active: $color-white;
+$color-heroselect-name-bg: $color-white;
+$color-heroselect-name-text: $color-dark;
+$color-heroselect-name-bg-active: $color-white;
+$color-heroselect-name-text-active: $color-blue;

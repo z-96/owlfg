@@ -14,15 +14,15 @@
   }
 
   &-hero {
-    border-top: 3px solid $color-white;
-    border-bottom: 3px solid $color-white;
+    border-top: 3px solid $color-heroselect-hero-border;
+    border-bottom: 3px solid $color-heroselect-hero-border;
     position: relative;
     display: inline-block;
     vertical-align: top;
     width: 80px;
     height: 74px;
     margin: 0 3px 20px;
-    background-color: $color-dark;
+    background-color: $color-heroselect-hero-bg;
     border-radius: 8px;
     cursor: pointer;
     @include ow-box;
@@ -34,6 +34,8 @@
       right: 0;
       bottom: 0;
       background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom center;
     }
 
     &-name {
@@ -44,19 +46,25 @@
       height: 16px;
       line-height: 16px;
       font-size: 10px;
-      background: $color-white;
-      color: $color-dark;
+      background: $color-heroselect-name-bg;
+      color: $color-heroselect-name-text;
       border-radius: 1000px;
       text-transform: uppercase;
     }
 
+    &:hover {
+      background-color: $color-heroselect-hero-bg-hover;
+    }
+
     &.isActive {
-      .heroselect-hero {
-        border-color: $color-orange;
-        background-color: $color-orange;
-        &-name {
-          background-color: $color-orange;
-        }
+      background-color: $color-heroselect-hero-bg-active;
+      border-color: $color-heroselect-hero-border-active;
+      &:hover {
+        background-color: $color-heroselect-hero-bg-active-hover;
+      }
+      .heroselect-hero-name {
+        background-color: $color-heroselect-name-bg-active;
+        color: $color-heroselect-name-text-active;
       }
     }
   }

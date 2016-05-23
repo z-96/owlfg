@@ -3,6 +3,8 @@ import { Link } from "react-router";
 
 import Button from "modules/Button";
 
+import "css/apps/home/loggedout";
+
 const LoggedOut = React.createClass({
   propTypes: {
     authenticate: React.PropTypes.func,
@@ -11,11 +13,17 @@ const LoggedOut = React.createClass({
   render() {
     return (
       <div className="home-loggedout">
-        <Button type="primary" onClick={this.props.authenticate}>
+        <Button
+          className="home-loggedout-auth"
+          type="primary"
+          onClick={this.props.authenticate}
+        >
           Sign in with Battle.net
         </Button>
+
         <div className="home-loggedout-divider">or</div>
-        <Button type="link" to="/groups">
+
+        <Button className="home-loggedout-browse" type="link" to="/groups">
           Browse Groups
         </Button>
       </div>

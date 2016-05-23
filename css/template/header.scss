@@ -1,11 +1,29 @@
 @import "config/colors";
 @import "config/type";
 
+$header-size: 40px;
 .owlfg-header {
+  position: relative;
+  height: $header-size;
+
   &-title {
-    &, a {
-      color: $color-white;
-    }
+    position: absolute;
+    top: 0;
+    left: 0%;
+    margin: 0;
+    line-height: $header-size;
+    transform: translateX(0%);
+    transition: 300ms left ease, 300ms transform ease;
     @include ow-font-large;
+
+
+    &--oversized {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &, a {
+      color: $color-header-link;
+    }
   }
 }

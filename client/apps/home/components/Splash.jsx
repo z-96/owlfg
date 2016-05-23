@@ -3,6 +3,8 @@ import { Link } from "react-router";
 
 import Button from "modules/Button";
 
+import "css/apps/home/splash";
+
 const Splash = React.createClass({
   propTypes: {
     user: React.PropTypes.object.isRequired,

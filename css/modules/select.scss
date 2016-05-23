@@ -1,15 +1,20 @@
 @import "config/forms";
 @import "config/type";
+@import "config/colors";
 @import "util/mixins";
 
 .owselect {
   height: $owform-el-height;
   margin-top: $owform-label-height;
-  background: $owform-el-bg;
-  cursor: pointer;
-  box-shadow: 0 0 0 2px $owform-el-border inset;
+  background: $color-owform-bg;
+  box-shadow: 0 0 0 2px $color-owform-border inset;
   border-radius: $owform-el-radius;
   @include ow-box;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 2px $color-owform-hover inset;
+  }
 
   &-active {
     position: absolute;
@@ -21,7 +26,7 @@
     padding: 0 12px;
     font-size: 16px;
     line-height: $owform-el-height;
-    color: $color-white;
+    color: $color-owform-label;
     @include copy-font;
   }
 

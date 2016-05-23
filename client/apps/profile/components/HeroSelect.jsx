@@ -1,4 +1,5 @@
 import React from "react";
+import PureRenderMixin from "react-addons-pure-render-mixin";
 
 import {
   HEROES,
@@ -14,6 +15,8 @@ const HeroSelect = React.createClass({
     heroes: React.PropTypes.array,
     onChange: React.PropTypes.func,
   },
+
+  mixins: [PureRenderMixin],
 
   _onClick(ev) {
     const hero = ev.currentTarget.getAttribute("data-hero");

@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 
-
 import Intro from "./components/Intro";
 import Form from "./components/Form";
 import { update } from "ducks/auth";

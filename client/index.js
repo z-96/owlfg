@@ -8,6 +8,7 @@ import { Router, Route, IndexRoute, browserHistory } from "react-router";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+import perflogger from "redux-perf-middleware";
 
 import reducers from "ducks/index";
 import Template from "template/App";
@@ -23,6 +24,7 @@ import Contact from "apps/contact/App";
 const store = createStore(reducers,
   compose(
     applyMiddleware(thunk),
+    applyMiddleware(perflogger),
     window.devToolsExtension ? window.devToolsExtension() : (f) => f
   )
 );

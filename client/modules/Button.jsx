@@ -5,6 +5,7 @@ import "css/modules/button";
 
 const Button = React.createClass({
   propTypes: {
+    className: React.PropTypes.string,
     children: React.PropTypes.node,
     type: React.PropTypes.oneOf([
       "primary",
@@ -24,7 +25,7 @@ const Button = React.createClass({
   },
 
   render() {
-    const { to, children } = this.props;
+    const { to, children, className } = this.props;
     const type = this.props.type || "default";
 
     let content = "";
@@ -41,6 +42,9 @@ const Button = React.createClass({
       "owbtn",
       `owbtn--${this.props.type}`,
     ];
+    if (className) {
+      classes.push(className);
+    }
 
     return (
       <button className={classes.join(" ")} onClick={this._handleClick}>
