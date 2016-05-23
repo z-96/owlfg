@@ -6,6 +6,23 @@ with other like-minded people to make for the best team experience.
 
 # Developing
 
+## First time setup
+
+Unfortunately there's some setup you'll need to do in each environment that
+you run this in, so let's get this over with:
+
+### Environment variables
+
+Copy `.env-example` and name it `.env`. Replace any of the keys that you can,
+and for the ones you can't, just expect that behavior to be broken.
+
+### SSL Cert
+
+Battle.net OAuth requires your site to be running over HTTPS, even if it's
+just localhost. You can do this by creating an `sslcert` directory at the base
+level of the project, and following the guide [OpenSSL self-signed cert guide]
+(http://www.akadia.com/services/ssh_test_certificate.html).
+
 ## Basic Data Structure
 
 This application revolves around a few main entities that you should be

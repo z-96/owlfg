@@ -21,7 +21,11 @@ import About from "apps/about/App";
 import Legal from "apps/legal/App";
 import Contact from "apps/contact/App";
 
-const store = createStore(reducers,
+const initialState = window.INITIAL_STATE ? window.INITIAL_STATE : {};
+
+const store = createStore(
+  reducers,
+  initialState,
   compose(
     applyMiddleware(thunk),
     applyMiddleware(perflogger),

@@ -14,9 +14,10 @@ const LoggedOut = React.createClass({
     return (
       <div className="home-loggedout">
         <Button
+          to="/auth"
+          link={true}
           className="home-loggedout-auth"
           type="primary"
-          onClick={this.props.authenticate}
         >
           Sign in with Battle.net
         </Button>

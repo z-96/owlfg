@@ -16,40 +16,64 @@ const Button = React.createClass({
     isLoading: React.PropTypes.bool,
     onClick: React.PropTypes.func,
     to: React.PropTypes.string,
+    link: React.PropTypes.bool,
+    popup: React.PropTypes.bool,
   },
 
   _handleClick(ev) {
     if (this.props.onClick) {
       this.props.onClick(ev);
     }
+    if (this.props.popup) {
+      ev.preventDefault();
+      const opts = {
+        width: 600,
+        height: 400,
+        toolbar: 0,
+        resizable: 0,
+      };
+      opts.left = window.screen.width / 2 - opts.width / 2;
+      opts.top = window.screen.height / 2 - opts.height * 0.75;
+
+      window.open(
+        this.props.to,
+        "bnet",
+        Object.keys(opts).reduce((prev, key) => {
+          let start = prev;
+          if (start.length) {
+            start = `${start},`;
+          }
+          return `${start}${key}=${opts[key]}`;
+        }, "")
+      );
+    }
   },
 
   render() {
-    const { to, children, className } = this.props;
-    const type = this.props.type || "default";
-
-    let content = "";
-    if (this.props.to) {
-      content = (
-        <Link to={to}>{children}</Link>
-      );
-    }
-    else {
-      content = children;
-    }
-
+    const { to, link, popup, type, children, className } = this.props;
     const classes = [
       "owbtn",
-      `owbtn--${this.props.type}`,
+      `owbtn--${type}`,
     ];
     if (className) {
       classes.push(className);
     }
 
+    let target = null;
+    if (link) {
+      target = "_self";
+    }
+    if (popup) {
+      target = "_blank";
+    }
+
     return (
-      <button className={classes.join(" ")} onClick={this._handleClick}>
-        {content}
-      </button>
+      <Link
+        to={to}
+        target={target}
+        className={classes.join(" ")}
+        onClick={this._handleClick}
+      >{children}</Link>
     );
   },
 });
